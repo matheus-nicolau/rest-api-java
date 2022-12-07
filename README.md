@@ -1,2 +1,2 @@
 # rest-api-java
-building a API REST in Java whit spring boot.
+building a API REST in Java with spring boot.
