@@ -1,7 +1,8 @@
 package com.restapijava;
 
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,18 +19,18 @@ public class RestApiJavaApplication {
 //	"model" }
 //)
 	
-	@Value("${spring.application.name}")
-	private String appProp;
+//	@Value("${spring.application.name}")
+//	private String appProp;
 	
 	
-//	@Autowired
-//	@Qualifier("introductionApi")
-//	private String introductionApi;
+	@Autowired
+	@Qualifier("introductionApi")
+	private String introductionApi;
 	
 	@GetMapping("/helloworld")
 	public String helloworld() {
 		
-		return appProp;
+		return introductionApi;
 	};
 	
 	public static void main(String[] args) {
