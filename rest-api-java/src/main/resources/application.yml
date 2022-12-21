@@ -15,13 +15,3 @@ spring:
 
 
 
-
-#spring:
-#  application:
-#    name: Developer environment
-#  profiles: 
-#    active: 
-
-#server.port: 8081
-#server.servlet.context-path: /hello-world
-

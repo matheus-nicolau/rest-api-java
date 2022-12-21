@@ -2,37 +2,29 @@ package com.restapijava;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.Bean;
+
+import domain.entity.Cliente;
+import domain.repository.Clientes;
+
+
 
 
 @SpringBootApplication
-@RestController
-public class RestApiJavaApplication {
+public class RestApiJavaApplication {	
 
-//@ComponentScan(basePackages = {
-//	"repository",
-//	"service",
-//	"model" }
-//)
 	
-//	@Value("${spring.application.name}")
-//	private String appProp;
-	
-	
-	@Autowired
-	@Qualifier("introductionApi")
-	private String introductionApi;
-	
-	@GetMapping("/helloworld")
-	public String helloworld() {
-		
-		return introductionApi;
-	};
-	
+	@Bean
+	public CommandLineRunner init(@Autowired Clientes clientes) {
+		return args -> {
+			Cliente cliente = new Cliente();
+			cliente.setNome("Matheus");
+			clientes.persist(cliente);
+		};
+	}
 	public static void main(String[] args) {
 		SpringApplication.run(RestApiJavaApplication.class, args);
 		 
