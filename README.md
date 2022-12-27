@@ -2,4 +2,4 @@
 building a API REST in Java with spring boot.
 
 
-![Diagrams](rest-api-java/src/main/resources/apiDiagrams.png)
+![Diagrams](rest-api-java/src/main/resources/apiDiagrams.drawio.png)
